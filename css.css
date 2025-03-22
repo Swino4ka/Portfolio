@@ -60,6 +60,26 @@ p {
 .project:hover {
   background: #222d4e;
 }
+.project-img-link {
+  display: inline-block;
+  margin-top: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+.project-img-link:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 18px rgba(91, 192, 235, 0.4);
+}
+
+.project-img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
 .img-placeholder {
   background: #34426e;
   height: 140px;
