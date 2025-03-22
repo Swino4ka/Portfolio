@@ -68,7 +68,7 @@ document.querySelectorAll('.clickable').forEach(el => {
 const terminalLoaderLines = [
   "> Initializing portfolio...",
   "> index.html detected...",
-  "> styles.css detected...",
+  "> css.css detected...",
   "> js.js detected...",
   "> images detected...",
   "> Web Developer with 5+ years of experience | Based in Poland"
