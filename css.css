@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   background-color: #0c1021;
   font-family: 'Inter', sans-serif;
@@ -10,6 +11,7 @@ body {
   padding: 40px;
   cursor: none;
 }
+
 .container {
   max-width: 960px;
   margin: auto;
@@ -19,15 +21,13 @@ body {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
   transition: all 0.3s ease;
 }
+
 h1 {
   font-size: 40px;
   margin-bottom: 10px;
   text-align: center;
 }
-h1.glow {
-  color: #00ffff;
-  text-shadow: 0 0 8px #00ffff;
-}
+
 h2 {
   margin-top: 30px;
   font-size: 24px;
@@ -35,21 +35,26 @@ h2 {
   padding-bottom: 5px;
   color: #5bc0eb;
 }
+
 h3 {
   margin-top: 20px;
   color: #9fd3ff;
 }
+
 p {
   margin: 10px 0;
   line-height: 1.5;
 }
+
 .badge-container img {
   margin: 5px;
   transition: transform 0.2s ease-in-out;
 }
+
 .badge-container img:hover {
   transform: scale(1.05);
 }
+
 .project {
   background: #1a2238;
   padding: 20px;
@@ -58,9 +63,11 @@ p {
   border-radius: 8px;
   transition: background 0.3s ease;
 }
+
 .project:hover {
   background: #222d4e;
 }
+
 .project-img-link {
   display: inline-block;
   margin-top: 10px;
@@ -94,18 +101,22 @@ p {
 /* cursor: pointer; */
   transition: background 0.3s ease, transform 0.2s ease;
 }
+
 .img-placeholder:hover {
   background: #3f4d7a;
   transform: scale(1.02);
 }
+
 .footer {
   margin-top: 40px;
   text-align: center;
 }
+
 .footer img {
   margin: 5px;
   transition: transform 0.2s ease-in-out;
 }
+
 .footer img:hover {
   transform: scale(1.1);
 }
@@ -113,10 +124,12 @@ p {
 .fade-in {
   animation: fadeIn 1.5s ease-in-out;
 }
+
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
 }
+
 .clickable {
   user-select: none;
 }
@@ -142,6 +155,7 @@ p {
   gap: 10px;
   margin-top: 10px;
 }
+
 .lang {
   background: #1a2238;
   padding: 10px 15px;
@@ -153,6 +167,7 @@ p {
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   transition: background 0.3s;
 }
+
 .lang:hover {
   background: #2b3550;
 }
@@ -161,12 +176,14 @@ p {
   background: #192a49;
   border-left: 4px solid #7bdff2;
 }
+
 .school-logo {
   margin-top: 10px;
   width: 180px;
   border-radius: 6px;
   transition: transform 0.3s ease;
 }
+
 .school-logo:hover {
   transform: scale(1.05);
 }
@@ -224,6 +241,7 @@ p {
   background-color: #39ff1433;
   color: #ffffff;
 }
+
 #kv-bubble {
   position: fixed;
   top: 0;
@@ -256,7 +274,6 @@ p {
   transform: translate(-50%, -50%);
 }
 
-/* Main cursor dot */
 .cursor {
   width: 8px;
   height: 8px;

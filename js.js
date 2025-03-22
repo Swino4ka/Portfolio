@@ -80,18 +80,16 @@ let loaderCurrentChar = 0;
 
 function typeLoaderLine() {
   if (loaderCurrentLine >= terminalLoaderLines.length) {
-    // Hide loader after delay
     setTimeout(() => {
         const loader = document.getElementById("terminal-loader");
         loader.classList.add("hidden-loader");
       
-        // Wait for DOM update to complete before glitching
         requestAnimationFrame(() => {
           setTimeout(() => {
             const glitchEl = document.querySelector(".glitch-text");
             const target = glitchEl.getAttribute("data-text");
             glitchText(glitchEl, target, 40);
-          }, 100); // slight delay so .hidden-loader transition completes
+          }, 100);
         });
       }, 600);         
     return;
@@ -173,13 +171,11 @@ function showMessage(message) {
   bubble.classList.remove("hide");
   lastMessageTime = Date.now();
 
-  // Auto-hide after 4 seconds unless replaced
   customMessageTimeout = setTimeout(() => {
     bubble.classList.add("hide");
   }, 4000);
 }
 
-// Handle default idle messages while moving
 document.addEventListener("mousemove", (e) => {
   bubble.style.top = `${e.clientY - 40}px`;
   bubble.style.left = `${e.clientX + 20}px`;
@@ -190,7 +186,6 @@ document.addEventListener("mousemove", (e) => {
   }
 });
 
-// Show custom bubble message on hover
 document.querySelectorAll("[data-bubble]").forEach(el => {
   el.addEventListener("mouseenter", () => {
     const msg = el.getAttribute("data-bubble");
@@ -203,11 +198,9 @@ const cursorTrail = document.querySelector('.cursor-trail');
 let mouseX = 0, mouseY = 0;
 let trailX = 0, trailY = 0;
 
-// Update mouse position
 document.addEventListener('mousemove', (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
 
-  // Immediate follow for main cursor
   cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
 });
