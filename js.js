@@ -197,3 +197,17 @@ document.querySelectorAll("[data-bubble]").forEach(el => {
     if (msg) showMessage(msg);
   });
 });
+const cursor = document.querySelector('.cursor');
+const cursorTrail = document.querySelector('.cursor-trail');
+
+let mouseX = 0, mouseY = 0;
+let trailX = 0, trailY = 0;
+
+// Update mouse position
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+
+  // Immediate follow for main cursor
+  cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+});

@@ -8,6 +8,7 @@ body {
   font-family: 'Inter', sans-serif;
   color: #f1f1f1;
   padding: 40px;
+  cursor: none;
 }
 .container {
   max-width: 960px;
@@ -90,7 +91,7 @@ p {
   border-radius: 8px;
   font-weight: bold;
   color: #ffffffaa;
-  cursor: pointer;
+/* cursor: pointer; */
   transition: background 0.3s ease, transform 0.2s ease;
 }
 .img-placeholder:hover {
@@ -214,7 +215,7 @@ p {
   color: #39ff14;
   font-family: 'Courier New', Courier, monospace;
   font-size: 16px;
-  cursor: pointer;
+/*  cursor: pointer; */
   align-self: flex-start;
   transition: background 0.3s, color 0.3s;
 }
@@ -244,4 +245,20 @@ p {
 
 #kv-bubble.hide {
   opacity: 0;
+}
+.cursor, .cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+}
+
+/* Main cursor dot */
+.cursor {
+  width: 8px;
+  height: 8px;
+  background-color: #5bc0eb;
 }
