@@ -223,3 +223,25 @@ p {
   background-color: #39ff1433;
   color: #ffffff;
 }
+#kv-bubble {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  background: #1a2238;
+  color: #5bc0eb;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace;
+  border: 1px solid #5bc0eb;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(91, 192, 235, 0.4);
+  pointer-events: none;
+  transition: top 0.05s linear, left 0.05s linear, opacity 0.3s;
+  z-index: 1000;
+  white-space: nowrap;
+}
+
+#kv-bubble.hide {
+  opacity: 0;
+}

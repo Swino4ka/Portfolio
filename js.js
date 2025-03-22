@@ -150,3 +150,50 @@ function glitchText(element, finalText, speed = 30) {
     if (iterations > finalText.length) clearInterval(interval);
   }, speed);
 }
+
+const bubble = document.getElementById("kv-bubble");
+const bubbleText = document.getElementById("kv-text");
+
+let defaultMessages = [
+  "👋 Welcome, Commander.",
+  "👀 Hover over a project!",
+  "🔥 Feeling the heat yet?",
+  "🎯 Target locked: Kvartiuk.",
+  "💡 Press 'K' for a surprise?",
+  "⚡ Boot sequence complete.",
+  "🧠 Full stack. Full power.",
+];
+
+let lastMessageTime = 0;
+let customMessageTimeout;
+
+function showMessage(message) {
+  clearTimeout(customMessageTimeout);
+  bubbleText.textContent = message;
+  bubble.classList.remove("hide");
+  lastMessageTime = Date.now();
+
+  // Auto-hide after 4 seconds unless replaced
+  customMessageTimeout = setTimeout(() => {
+    bubble.classList.add("hide");
+  }, 4000);
+}
+
+// Handle default idle messages while moving
+document.addEventListener("mousemove", (e) => {
+  bubble.style.top = `${e.clientY - 40}px`;
+  bubble.style.left = `${e.clientX + 20}px`;
+
+  if (Date.now() - lastMessageTime > 6000) {
+    const randomMessage = defaultMessages[Math.floor(Math.random() * defaultMessages.length)];
+    showMessage(randomMessage);
+  }
+});
+
+// Show custom bubble message on hover
+document.querySelectorAll("[data-bubble]").forEach(el => {
+  el.addEventListener("mouseenter", () => {
+    const msg = el.getAttribute("data-bubble");
+    if (msg) showMessage(msg);
+  });
+});
