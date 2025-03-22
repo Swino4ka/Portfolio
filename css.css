@@ -130,17 +130,6 @@ p {
   background: #0c1021;
 }
 
-.fancy-name {
-  font-size: 48px;
-  text-align: center;
-  background: linear-gradient(90deg, #5bc0eb, #00fff7, #5bc0eb);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 4s linear infinite;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
-
 @keyframes shine {
   0% { background-position: 0%; }
   100% { background-position: 200%; }
@@ -179,4 +168,58 @@ p {
 }
 .school-logo:hover {
   transform: scale(1.05);
+}
+
+#terminal-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0a0a;
+  color: #39ff14;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  font-size: 18px;
+  z-index: 9999;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.terminal-line {
+  margin-bottom: 12px;
+  white-space: pre;
+}
+
+.blinking-cursor::after {
+  content: "_";
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.hidden-loader {
+  opacity: 0;
+  visibility: hidden;
+}
+#skip-btn {
+  margin-top: 30px;
+  padding: 8px 16px;
+  background-color: transparent;
+  border: 1px solid #39ff14;
+  color: #39ff14;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.3s, color 0.3s;
+}
+
+#skip-btn:hover {
+  background-color: #39ff1433;
+  color: #ffffff;
 }

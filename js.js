@@ -64,3 +64,89 @@ document.querySelectorAll('.clickable').forEach(el => {
     setTimeout(() => el.classList.remove('clicked'), 200);
   });
 });
+
+const terminalLoaderLines = [
+  "> Initializing portfolio...",
+  "> index.html detected...",
+  "> styles.css detected...",
+  "> js.js detected...",
+  "> images detected...",
+  "> Web Developer with 5+ years of experience | Based in Poland"
+];
+
+const loaderTypingSpeed = 45;
+let loaderCurrentLine = 0;
+let loaderCurrentChar = 0;
+
+function typeLoaderLine() {
+  if (loaderCurrentLine >= terminalLoaderLines.length) {
+    // Hide loader after delay
+    setTimeout(() => {
+        const loader = document.getElementById("terminal-loader");
+        loader.classList.add("hidden-loader");
+      
+        // Wait for DOM update to complete before glitching
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            const glitchEl = document.querySelector(".glitch-text");
+            const target = glitchEl.getAttribute("data-text");
+            glitchText(glitchEl, target, 40);
+          }, 100); // slight delay so .hidden-loader transition completes
+        });
+      }, 600);         
+    return;
+  }
+
+  const lineElement = document.getElementById(`line${loaderCurrentLine + 1}`);
+  const lineText = terminalLoaderLines[loaderCurrentLine];
+
+  lineElement.innerHTML =
+    lineText.slice(0, loaderCurrentChar) + '<span class="blinking-cursor"></span>';
+
+  if (loaderCurrentChar < lineText.length) {
+    loaderCurrentChar++;
+    setTimeout(typeLoaderLine, loaderTypingSpeed);
+  } else {
+    loaderCurrentChar = 0;
+    loaderCurrentLine++;
+    setTimeout(typeLoaderLine, 400);
+  }
+}
+
+window.addEventListener("load", () => {
+  typeLoaderLine();
+});
+
+document.getElementById("skip-btn").addEventListener("click", () => {
+  const loader = document.getElementById("terminal-loader");
+  loader.classList.add("hidden-loader");
+
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      const glitchEl = document.querySelector(".glitch-text");
+      const target = glitchEl.getAttribute("data-text");
+      glitchText(glitchEl, target, 40);
+    }, 100);
+  });
+});
+
+function glitchText(element, finalText, speed = 30) {
+  const chars = "!@#$%^&*()_+=-[]{}|;:',.<>?/\\`~▒▓█";
+  let currentText = new Array(finalText.length).fill("");
+  let iterations = 0;
+
+  const interval = setInterval(() => {
+    for (let i = 0; i < finalText.length; i++) {
+      if (i <= iterations) {
+        currentText[i] = finalText[i];
+      } else {
+        currentText[i] = chars[Math.floor(Math.random() * chars.length)];
+      }
+    }
+
+    element.textContent = currentText.join("");
+
+    iterations++;
+    if (iterations > finalText.length) clearInterval(interval);
+  }, speed);
+}
