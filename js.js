@@ -1,3 +1,22 @@
+const canvas = document.getElementById('stars');
+const ctx = canvas.getContext('2d');
+let stars = [];
+const loaderTypingSpeed = 45;
+let loaderCurrentLine = 0;
+let loaderCurrentChar = 0;
+let defaultMessages = [
+  "👋 Welcome, Commander.",
+  "👀 Hover over a project!",
+  "🔥 Feeling the heat yet?",
+  "🎯 Target locked: Kvartiuk.",
+  "💡 Press 'K' for a surprise?",
+  "⚡ Boot sequence complete.",
+  "🧠 Full stack. Full power.",
+];
+
+let lastMessageTime = 0;
+let customMessageTimeout;
+
 function openLink(url) {
   window.open(url, '_blank');
 }
@@ -10,10 +29,6 @@ document.querySelectorAll('.badge-container img').forEach(img => {
     img.style.filter = 'none';
   });
 });
-
-const canvas = document.getElementById('stars');
-const ctx = canvas.getContext('2d');
-let stars = [];
 
 function resizeCanvas() {
   canvas.width = window.innerWidth;
@@ -73,10 +88,6 @@ const terminalLoaderLines = [
   "> images detected...",
   "> Web Developer with 5+ years of experience | Based in Poland"
 ];
-
-const loaderTypingSpeed = 45;
-let loaderCurrentLine = 0;
-let loaderCurrentChar = 0;
 
 function typeLoaderLine() {
   if (loaderCurrentLine >= terminalLoaderLines.length) {
@@ -151,19 +162,6 @@ function glitchText(element, finalText, speed = 30) {
 
 const bubble = document.getElementById("kv-bubble");
 const bubbleText = document.getElementById("kv-text");
-
-let defaultMessages = [
-  "👋 Welcome, Commander.",
-  "👀 Hover over a project!",
-  "🔥 Feeling the heat yet?",
-  "🎯 Target locked: Kvartiuk.",
-  "💡 Press 'K' for a surprise?",
-  "⚡ Boot sequence complete.",
-  "🧠 Full stack. Full power.",
-];
-
-let lastMessageTime = 0;
-let customMessageTimeout;
 
 function showMessage(message) {
   clearTimeout(customMessageTimeout);
