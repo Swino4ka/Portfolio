@@ -2,20 +2,27 @@ const canvas = document.getElementById('stars');
 const ctx = canvas.getContext('2d');
 let stars = [];
 const loaderTypingSpeed = 45;
+const bubble = document.getElementById("kv-bubble");
+const bubbleText = document.getElementById("kv-text");
 let loaderCurrentLine = 0;
 let loaderCurrentChar = 0;
 let defaultMessages = [
   "👋 Welcome, Commander.",
   "👀 Hover over a project!",
   "🔥 Feeling the heat yet?",
-  "🎯 Target locked: Kvartiuk.",
-  "💡 Press 'K' for a surprise?",
+  "🎯 Target locked.",
   "⚡ Boot sequence complete.",
   "🧠 Full stack. Full power.",
 ];
 
 let lastMessageTime = 0;
 let customMessageTimeout;
+
+let mouseX = 0, mouseY = 0;
+let trailX = 0, trailY = 0;
+
+const cursor = document.querySelector('.cursor');
+const cursorTrail = document.querySelector('.cursor-trail');
 
 function openLink(url) {
   window.open(url, '_blank');
@@ -160,9 +167,6 @@ function glitchText(element, finalText, speed = 30) {
   }, speed);
 }
 
-const bubble = document.getElementById("kv-bubble");
-const bubbleText = document.getElementById("kv-text");
-
 function showMessage(message) {
   clearTimeout(customMessageTimeout);
   bubbleText.textContent = message;
@@ -190,11 +194,6 @@ document.querySelectorAll("[data-bubble]").forEach(el => {
     if (msg) showMessage(msg);
   });
 });
-const cursor = document.querySelector('.cursor');
-const cursorTrail = document.querySelector('.cursor-trail');
-
-let mouseX = 0, mouseY = 0;
-let trailX = 0, trailY = 0;
 
 document.addEventListener('mousemove', (e) => {
   mouseX = e.clientX;
