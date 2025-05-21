@@ -145,11 +145,6 @@ p {
   background: #0c1021;
 }
 
-@keyframes shine {
-  0% { background-position: 0%; }
-  100% { background-position: 200%; }
-}
-
 .lang-block {
   display: flex;
   flex-wrap: wrap;
@@ -217,10 +212,6 @@ p {
   animation: blink 1s step-start infinite;
 }
 
-@keyframes blink {
-  50% { opacity: 0; }
-}
-
 .hidden-loader {
   opacity: 0;
   visibility: hidden;
@@ -279,4 +270,13 @@ p {
   width: 8px;
   height: 8px;
   background-color: #5bc0eb;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes shine {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
 }
