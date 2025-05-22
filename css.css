@@ -126,11 +126,6 @@ p {
   animation: fadeIn 1.5s ease-in-out;
 }
 
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
 .clickable {
   user-select: none;
 }
@@ -279,4 +274,9 @@ p {
 @keyframes shine {
   0% { background-position: 0%; }
   100% { background-position: 200%; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
