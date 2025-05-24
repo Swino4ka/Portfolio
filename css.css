@@ -108,6 +108,21 @@ p {
   transform: scale(1.02);
 }
 
+.terminal-line {
+  margin-bottom: 12px;
+  white-space: pre;
+}
+
+.blinking-cursor::after {
+  content: "_";
+  animation: blink 1s step-start infinite;
+}
+
+.hidden-loader {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .footer {
   margin-top: 40px;
   text-align: center;
@@ -197,20 +212,6 @@ p {
   transition: opacity 1s ease, visibility 1s ease;
 }
 
-.terminal-line {
-  margin-bottom: 12px;
-  white-space: pre;
-}
-
-.blinking-cursor::after {
-  content: "_";
-  animation: blink 1s step-start infinite;
-}
-
-.hidden-loader {
-  opacity: 0;
-  visibility: hidden;
-}
 #skip-btn {
   margin-top: 30px;
   padding: 8px 16px;
