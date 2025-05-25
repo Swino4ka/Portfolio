@@ -4,6 +4,14 @@ let stars = [];
 const loaderTypingSpeed = 45;
 const bubble = document.getElementById("kv-bubble");
 const bubbleText = document.getElementById("kv-text");
+const terminalLoaderLines = [
+  "> Initializing portfolio...",
+  "> index.html detected...",
+  "> css.css detected...",
+  "> js.js detected...",
+  "> images detected...",
+  "> Web Developer with 5+ years of experience | Based in Poland"
+];
 let loaderCurrentLine = 0;
 let loaderCurrentChar = 0;
 let defaultMessages = [
@@ -86,15 +94,6 @@ document.querySelectorAll('.clickable').forEach(el => {
     setTimeout(() => el.classList.remove('clicked'), 200);
   });
 });
-
-const terminalLoaderLines = [
-  "> Initializing portfolio...",
-  "> index.html detected...",
-  "> css.css detected...",
-  "> js.js detected...",
-  "> images detected...",
-  "> Web Developer with 5+ years of experience | Based in Poland"
-];
 
 function typeLoaderLine() {
   if (loaderCurrentLine >= terminalLoaderLines.length) {
