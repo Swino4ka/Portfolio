@@ -37,6 +37,12 @@ p {
   line-height: 1.5;
 }
 
+.cursor {
+  width: 8px;
+  height: 8px;
+  background-color: #5bc0eb;
+}
+
 .container {
   max-width: 960px;
   margin: auto;
@@ -260,12 +266,6 @@ p {
   border-radius: 50%;
   z-index: 10000;
   transform: translate(-50%, -50%);
-}
-
-.cursor {
-  width: 8px;
-  height: 8px;
-  background-color: #5bc0eb;
 }
 
 @keyframes blink {
