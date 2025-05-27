@@ -151,16 +151,6 @@ p {
   user-select: none;
 }
 
-#stars {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background: #0c1021;
-}
-
 .lang-block {
   display: flex;
   flex-wrap: wrap;
@@ -198,6 +188,16 @@ p {
 
 .school-logo:hover {
   transform: scale(1.05);
+}
+
+#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: #0c1021;
 }
 
 #terminal-loader {
