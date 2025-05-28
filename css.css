@@ -190,6 +190,16 @@ p {
   transform: scale(1.05);
 }
 
+.cursor, .cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+}
+
 #stars {
   position: fixed;
   top: 0;
@@ -257,15 +267,6 @@ p {
 
 #kv-bubble.hide {
   opacity: 0;
-}
-.cursor, .cursor-trail {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  border-radius: 50%;
-  z-index: 10000;
-  transform: translate(-50%, -50%);
 }
 
 @keyframes blink {
