@@ -1,6 +1,5 @@
 const canvas = document.getElementById('stars');
 const ctx = canvas.getContext('2d');
-let stars = [];
 const loaderTypingSpeed = 45;
 const bubble = document.getElementById("kv-bubble");
 const bubbleText = document.getElementById("kv-text");
@@ -25,6 +24,7 @@ let defaultMessages = [
 
 let lastMessageTime = 0;
 let customMessageTimeout;
+let stars = [];
 
 let mouseX = 0, mouseY = 0;
 let trailX = 0, trailY = 0;
