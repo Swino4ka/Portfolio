@@ -3,6 +3,7 @@ const ctx = canvas.getContext('2d');
 const loaderTypingSpeed = 45;
 const bubble = document.getElementById("kv-bubble");
 const bubbleText = document.getElementById("kv-text");
+const cursor = document.querySelector('.cursor');
 const terminalLoaderLines = [
   "> Initializing portfolio...",
   "> index.html detected...",
@@ -29,7 +30,6 @@ let stars = [];
 let mouseX = 0, mouseY = 0;
 let trailX = 0, trailY = 0;
 
-const cursor = document.querySelector('.cursor');
 const cursorTrail = document.querySelector('.cursor-trail');
 
 function openLink(url) {
