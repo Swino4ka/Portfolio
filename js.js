@@ -16,7 +16,7 @@ const terminalLoaderLines = [
 let loaderCurrentLine = 0;
 let loaderCurrentChar = 0;
 let defaultMessages = [
-  "👋 Welcome, Commander.",
+  "👋 Welcome.",
   "👀 Hover over a project!",
   "🔥 Feeling the heat yet?",
   "🎯 Target locked.",
