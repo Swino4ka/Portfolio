@@ -27,7 +27,6 @@ let defaultMessages = [
 let lastMessageTime = 0;
 let customMessageTimeout;
 let stars = [];
-
 let mouseX = 0, mouseY = 0;
 let trailX = 0, trailY = 0;
 
