@@ -160,7 +160,6 @@ function glitchText(element, finalText, speed = 30) {
     }
 
     element.textContent = currentText.join("");
-
     iterations++;
     if (iterations > finalText.length) clearInterval(interval);
   }, speed);
@@ -197,6 +196,5 @@ document.querySelectorAll("[data-bubble]").forEach(el => {
 document.addEventListener('mousemove', (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
-
   cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
 });
