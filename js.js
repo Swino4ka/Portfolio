@@ -15,7 +15,6 @@ const terminalLoaderLines = [
 ];
 let loaderCurrentLine = 0;
 let loaderCurrentChar = 0;
-//lmao
 let defaultMessages = [
   "👋 Welcome.",
   "👀 Hover over a project!",
