@@ -16,12 +16,9 @@ const terminalLoaderLines = [
 let loaderCurrentLine = 0;
 let loaderCurrentChar = 0;
 let defaultMessages = [
-  "👋 Welcome.",
-  "👀 Hover over a project!",
-  "🔥 Feeling the heat yet?",
-  "🎯 Target locked.",
-  "⚡ Boot sequence complete.",
-  "🧠 Full stack. Full power.",
+  "Welcome.",
+  "Hover over a project!",
+  "Boot sequence complete.",
 ];
 
 let lastMessageTime = 0;
