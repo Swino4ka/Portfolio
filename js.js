@@ -11,7 +11,7 @@ const terminalLoaderLines = [
   "> css.css detected...",
   "> js.js detected...",
   "> images detected...",
-  "> Web Developer with 5+ years of experience | Based in Poland"
+  "> Thing is looking good...",
 ];
 let loaderCurrentLine = 0;
 let loaderCurrentChar = 0;
